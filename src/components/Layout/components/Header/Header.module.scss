@@ -1,0 +1,130 @@
+.wrapper {
+  --search-border-radius: 92px;
+  --search-height: 46px;
+  --search-top-spacer: 9px;
+  --search-width: 52px;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  justify-content: center;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  width: var(--default-layout-header-height);
+  height: 100%;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.search-result,
+.search {
+  width: 360px;
+}
+.search {
+  display: flex;
+  height: var(--search-height);
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: 92px;
+  padding: 0 0 0 16px;
+  position: relative;
+  align-items: center;
+  border: solid 1.5px transparent;
+  box-sizing: content-box;
+  input {
+    flex: 1;
+    height: 100%;
+    color: var(--search-text-color);
+    font-size: 1.6rem;
+    background-color: transparent;
+    caret-color: var(--primary-color);
+  }
+
+  input:not(:placeholder-shown) ~ .search-btn {
+    color: rgba(22, 24, 35, 0.75);
+  }
+
+  input:not(:placeholder-shown) ~ .clear {
+    display: block;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: calc(var(--search-height) - 2 * var(--search-top-spacer));
+    background: rgba(22, 24, 35, 0.12);
+    width: 1px;
+    top: var(--search-top-spacer);
+    right: var(--search-width);
+  }
+
+  &:focus-within {
+    border: 1.5px solid rgba(22, 24, 35, 0.2);
+  }
+}
+
+.search-result {
+}
+
+.list-accounts-title {
+  height: 30px;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: rgba(22, 24, 35, 0.5);
+}
+
+.clear {
+}
+.clear,
+.loading {
+  position: absolute;
+  right: calc(var(--search-width) + 16px);
+  color: rgba(22, 24, 35, 0.34);
+  display: none;
+  //   top: 50%;
+}
+.search-btn {
+  width: var(--search-width);
+  height: var(--search-height);
+  font-size: 1.8rem;
+  color: #a7a7ab;
+  border-top-right-radius: var(--search-border-radius);
+  border-bottom-right-radius: var(--search-border-radius);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+
+  &:active {
+    background: rgba(22, 24, 35, 0.06);
+  }
+}
+
+
+.plus-icon {
+  margin-right: 4px;   
+}
+
+
+.menu-icon {
+  margin-left: 20px;
+  margin-top: 4px;
+  font-size: 2rem;
+  padding: 4px 6px;
+}
+
+// 
