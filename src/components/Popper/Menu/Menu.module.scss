@@ -16,3 +16,30 @@
     background: rgba(22, 24, 35, 0.03)
   }
 }
+
+.header {
+  position: relative;
+  height: 50px;
+}
+
+.back-btn {
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header-title {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+.saparate {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: solid 1px rgba(22, 24, 35, 0.12);
+}

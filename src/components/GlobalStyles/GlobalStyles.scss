@@ -3,6 +3,7 @@
 
 :root {
     --default-layout-header-height: 1150px;
+    --default-layout-horizontal: 24px;
     --search-text-color: #000;
     --primary-color: rgba(254, 44, 85, 1);
 }
@@ -25,6 +26,9 @@ body {
   line-height: 1.5;
     text-rendering: optimizeLegibility;
     margin: 0;
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
 }
 
 
@@ -36,4 +40,19 @@ button, input, [tabindex] {
 a[href] {
     color: var(--search-text-color);
     text-decoration: none;
+}
+
+//custom tippy
+body {
+    .tippy-box{
+       background-color: rgba(84, 84, 84, 0.92);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+    border-radius: 8px; 
+    }
+    
+    .tippy-content {
+        padding: 8px 9px;
+    }
 }

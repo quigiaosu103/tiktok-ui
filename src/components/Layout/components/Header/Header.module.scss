@@ -3,6 +3,7 @@
   --search-height: 46px;
   --search-top-spacer: 9px;
   --search-width: 52px;
+  --border-size: 1.5px;
   display: flex;
   height: 60px;
   width: 100%;
@@ -19,6 +20,7 @@
   display: flex;
   align-items: center;
   width: var(--default-layout-header-height);
+  padding: 0 var(--default-layout-horizontal);
   height: 100%;
   justify-content: space-between;
 }
@@ -26,18 +28,18 @@
 .logo {
   display: flex;
   align-items: center;
+  min-width: 300px;
 }
 
 .search-result,
 .search {
-  width: 360px;
+  width: calc(360px - 2 * var(--border-size));
 }
 .search {
   display: flex;
-  height: var(--search-height);
+  height: calc(var(--search-height) - 2 * var(--border-size));
   background-color: rgba(22, 24, 35, 0.06);
   border-radius: 92px;
-  padding: 0 0 0 16px;
   position: relative;
   align-items: center;
   border: solid 1.5px transparent;
@@ -46,8 +48,9 @@
     flex: 1;
     height: 100%;
     color: var(--search-text-color);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background-color: transparent;
+    padding: 0 0 0 16px;
     caret-color: var(--primary-color);
   }
 
@@ -98,7 +101,7 @@
 }
 .search-btn {
   width: var(--search-width);
-  height: var(--search-height);
+  height: calc(var(--search-height) - 2 * var(--border-size));
   font-size: 1.8rem;
   color: #a7a7ab;
   border-top-right-radius: var(--search-border-radius);
@@ -112,6 +115,10 @@
   &:active {
     background: rgba(22, 24, 35, 0.06);
   }
+}
+
+.upload-btn {
+  margin-right: 16px;
 }
 
 
@@ -128,3 +135,21 @@
 }
 
 // 
+
+.action-btn {
+ font-size: 2.2rem;
+ color: #161823;
+ background-color: transparent;
+ padding: 4px 12px;
+ cursor: pointer;
+}
+
+
+
+.user-avatar {
+width: 32px;
+height: 32px;
+border-radius: 50%;
+margin-left: 12px;
+cursor: pointer;
+}
