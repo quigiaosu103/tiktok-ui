@@ -1,6 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Roboto:wght@300&family=Texturina&display=swap');
-
 :root {
     --default-layout-header-height: 1150px;
     --default-layout-horizontal: 24px;
@@ -21,7 +19,7 @@ h1, p {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
     text-rendering: optimizeLegibility;
@@ -41,6 +39,32 @@ a[href] {
     color: var(--search-text-color);
     text-decoration: none;
 }
+
+//fonts
+@font-face {
+    font-family: ProximaNova;
+    src: url('/acssets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/acssets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/acssets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/acssets/fonts/sofiapro-semibold.otf');
+    font-weight: 700;
+}
+
 
 //custom tippy
 body {

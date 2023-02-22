@@ -1,75 +1,76 @@
 .wrapper {
-    font-size: 1.6rem;
-    min-width: 100px;
-    padding: 9px 16px;
-    font-weight: 500;
-    border-radius: 4px;
-    border: solid 1px transparent;
-    display: inline-block;
-    text-align: center;
-    line-height: 100%;
-    background-color: #fff;
-    cursor: pointer;
-
+  font-size: 1.6rem;
+  min-width: 100px;
+  padding: 9px 16px;
+  font-family: 'ProximaNova', sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  border: solid 1px transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 100%;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .primary {
-    background-color:  var(--primary-color);
-    color: #fff;
-    cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
 
-    &:hover {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),#FE2C55;
-    }
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+  }
 }
 
 .outline {
-    color: var(--primary-color)!important;
+  color: var(--primary-color) !important;
+  border-color: currentColor;
+
+  &:hover {
     border-color: currentColor;
-    
-    &:hover {
-        border-color: currentColor;
-        background-color: rgba(254, 44, 85, 0.06);
-    }
+    background-color: rgba(254, 44, 85, 0.06);
+  }
 }
 
 .secondary {
-    cursor: pointer;
-    border-color: rgba(22, 24, 35, 0.12);
+  cursor: pointer;
+  border-color: rgba(22, 24, 35, 0.12);
 
-    &:hover {
-        background-color: rgba(22, 24, 35, .03);
-    }
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
 }
 
 .rounded {
-    border-radius: 999px;
+  border-radius: 999px;
 }
 
 .small {
-    min-width: 88px;
-    padding: 3px 18px;
-    min-height: 28px;
-    
+  min-width: 88px;
+  padding: 3px 18px;
+  min-height: 28px;
 }
 
 .large {
-    padding: 14px 16px;
-    min-width: 136px;
+  padding: 14px 16px;
+  min-width: 136px;
 }
 
 .disabled {
-    pointer-events: none;
-    opacity: .5;
-    user-select: none;
+  pointer-events: none;
+  opacity: 0.5;
+  user-select: none;
 }
 
-.icon +.title, .title + .icon {
-    margin-left: 8px;
+.icon + .title,
+.title + .icon {
+  margin-left: 8px;
 }
 
-.icon{
-    display: inline-block;
-    width: 22px;
+.icon {
+  display: inline-block;
+  width: 22px;
 }
-

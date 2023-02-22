@@ -23,7 +23,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { faViadeo } from '@fortawesome/free-brands-svg-icons';
+import {MessageIcon, UploadIcon} from '~/components/Icons'
+import Image from '~/components/Images';
 
 const cx = classNames.bind(styles);
 
@@ -136,11 +137,11 @@ function Header() {
               <div className={cx('current-user')}>
                 <Tippy content="Upload Vidieo" placement="bottom">
                   <button className={cx('action-btn')}>
-                    <FontAwesomeIcon icon={faCloudUpload} />
+                    <UploadIcon />
                   </button>
                 </Tippy>
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faMessage} />
+                  <MessageIcon />
                 </button>
               </div>
             </>
@@ -164,10 +165,10 @@ function Header() {
           <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
             <span>
               {currentUser ? (
-                <img
+                <Image
                   className={cx('user-avatar')}
-                  src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
-                ></img>
+                  src=""
+                ></Image>
               ) : (
                 <FontAwesomeIcon className={cx('menu-icon')} icon={faEllipsisVertical}></FontAwesomeIcon>
               )}
