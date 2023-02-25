@@ -1,30 +1,27 @@
 import classNames from 'classnames/bind';
-import { Children, useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
-import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'tippy.js/dist/tippy.css';
-import { faCamera, faCameraAlt, faCameraRetro, faCircleXmark, faCoins, faGear, faRightFromBracket, faSpinner, faUser, faVideo } from '@fortawesome/free-solid-svg-icons';
 import {
+  faCoins,
+  faGear,
+  faRightFromBracket,
+  faVideo,
   faCircleQuestion,
-  faCloudUpload,
   faEarthAsia,
   faEllipsisVertical,
   faKeyboard,
-  faMagnifyingGlass,
-  faMessage,
   faPlus,
-  faSignIn,
+  faUser
 } from '@fortawesome/free-solid-svg-icons';
 
 import images from '~/acssets/images';
 import styles from './Header.module.scss';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import {MessageIcon, UploadIcon} from '~/components/Icons'
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Images';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -88,7 +85,7 @@ const USER_MENU = [
 ];
 function Header() {
   const currentUser = 'user1';
-  const [searchResult, setSearchResult] = useState([]);
+  
   const handleMenuChange = (item) => {
     switch (item.type) {
       case 'languages':
@@ -96,41 +93,14 @@ function Header() {
       default:
     }
   };
-  useEffect(() => {
-    setTimeout(() => {}, 3000);
-  }, [searchResult]);
-
+  
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
           <img src={images.logo.default} alt="tiktok"></img>
         </div>
-        <HeadlessTippy
-          interactive="true"
-          visible={searchResult.length > 0}
-          placement="bottom"
-          render={(attrs) => (
-            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <div className={cx('list-accounts-title')}>Accounts</div>
-                <AccountItem />
-                <AccountItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <div className={cx('search')}>
-            <input placeholder="Search accounts and vidieos"></input>
-            <button className={cx('clear')}>
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-            <FontAwesomeIcon className={cx('loading')} icon={faSpinner}></FontAwesomeIcon>
-            <button className={cx('search-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </div>
-        </HeadlessTippy>
+        <Search />
         <div className={cx('actions')}>
           {currentUser ? (
             <>
@@ -140,9 +110,17 @@ function Header() {
                     <UploadIcon />
                   </button>
                 </Tippy>
-                <button className={cx('action-btn')}>
-                  <MessageIcon />
-                </button>
+                <Tippy content="Message" placement="bottom">
+                  <button className={cx('action-btn')}>
+                    <MessageIcon />
+                  </button>
+                </Tippy>
+
+                <Tippy content="Inbox" placement="bottom">
+                  <button className={cx('action-btn')}>
+                    <InboxIcon />
+                  </button>
+                </Tippy>
               </div>
             </>
           ) : (
@@ -165,10 +143,7 @@ function Header() {
           <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
             <span>
               {currentUser ? (
-                <Image
-                  className={cx('user-avatar')}
-                  src=""
-                ></Image>
+                <Image className={cx('user-avatar')} src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"></Image>
               ) : (
                 <FontAwesomeIcon className={cx('menu-icon')} icon={faEllipsisVertical}></FontAwesomeIcon>
               )}
