@@ -4,6 +4,7 @@
     --default-layout-horizontal: 24px;
     --search-text-color: #000;
     --primary-color: rgba(254, 44, 85, 1);
+    --font-family: 'ProximaNova', sans-serif;
 }
 
 *{
@@ -19,7 +20,7 @@ h1, p {
 }
 
 body {
-  font-family: 'ProximaNova', sans-serif;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 1.5;
     text-rendering: optimizeLegibility;

@@ -14,7 +14,8 @@ import {
   faPlus,
   faUser
 } from '@fortawesome/free-solid-svg-icons';
-
+import routeConfig from '~/configs/route';
+import { Link } from 'react-router-dom';
 import images from '~/acssets/images';
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
@@ -47,7 +48,7 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
     title: 'Feedback and help',
-    to: '/feedback',
+    to: routeConfig.feedback,
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
@@ -59,7 +60,7 @@ const USER_MENU = [
   {
     icon: <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>,
     title: 'View profile',
-    to: '/profile',
+    to: routeConfig.profile,
   },
   {
     icon: <FontAwesomeIcon icon={faCoins}></FontAwesomeIcon>,
@@ -97,9 +98,9 @@ function Header() {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <div className={cx('logo')}>
+        <Link to={routeConfig.home} className={cx('logo')}>
           <img src={images.logo.default} alt="tiktok"></img>
-        </div>
+        </Link>
         <Search />
         <div className={cx('actions')}>
           {currentUser ? (
