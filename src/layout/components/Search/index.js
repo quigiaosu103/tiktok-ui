@@ -4,7 +4,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import * as searchServices from '~/apiServices/searchService';
+import * as searchServices from '~/services/searchService';
 import useDebounce from '~/hooks/useDebounce';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
@@ -56,7 +56,7 @@ function Search() {
     <div>
       <HeadlessTippy
         interactive="true"
-        visible={showResults && searchResult.length > 0 && searchValue != ''}
+        visible={showResults && searchResult.length > 0 && searchValue !== ''}
         placement="bottom"
         onClickOutside={handleHideResults}
         render={(attrs) => (
