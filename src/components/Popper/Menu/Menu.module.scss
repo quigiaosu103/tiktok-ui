@@ -6,6 +6,12 @@
   padding: 8px 0;
 }
 
+.body-popper {
+  overflow-y: overlay;
+  display: flex;
+  flex-direction: column;
+}
+
 .menu-item {
   width: 100%;
   display: flex;
@@ -20,6 +26,7 @@
 .header {
   position: relative;
   height: 50px;
+  flex-shrink: 0;
 }
 
 .back-btn {

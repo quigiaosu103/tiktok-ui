@@ -6,9 +6,10 @@
 
 .container {
     display: flex;
-    width: var(--default-layout-header-height);
+    width: var(--default-layout-header-width);
     padding: 0 var(--default-layout-horizontal);
     min-height: 100px;
+    margin-top: var(--default-layout-header-height);
 }
 
 .content {

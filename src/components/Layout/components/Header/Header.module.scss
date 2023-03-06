@@ -4,6 +4,8 @@
   --search-top-spacer: 9px;
   --search-width: 52px;
   --border-size: 1.5px;
+  
+  position: fixed;
   display: flex;
   height: 60px;
   width: 100%;
@@ -19,7 +21,7 @@
 .inner {
   display: flex;
   align-items: center;
-  width: var(--default-layout-header-height);
+  width: var(--default-layout-header-width);
   padding: 0 var(--default-layout-horizontal);
   height: 100%;
   justify-content: space-between;
