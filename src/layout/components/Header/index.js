@@ -30,165 +30,23 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
     title: 'english',
-    children: [
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
-        title: 'English',
-        code: 'en',
-      },
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      },
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      },
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      }
-      ,
-      {
-        type: 'languages',
-        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
-        title: 'Vietnamese',
-        code: 'vi',
-      },
-    ],
+    children: {
+      title: 'Languages',
+      data: [
+        {
+          type: 'languages',
+          icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
+          title: 'English',
+          code: 'en',
+        },
+        {
+          type: 'languages',
+          icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
+          title: 'Vietnamese',
+          code: 'vi',
+        },
+      ],
+    }
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,

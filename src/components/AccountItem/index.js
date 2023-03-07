@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './AccountItem.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -17,6 +18,10 @@ function AccountItem({data}) {
         <p className={cx('username')}>{data.full_name}</p>
       </div>
   </Link>;
+}
+
+AccountItem.propTypes = {
+  data: PropTypes.object
 }
 
 export default AccountItem;
