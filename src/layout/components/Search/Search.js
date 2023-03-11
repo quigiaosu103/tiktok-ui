@@ -4,7 +4,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import * as searchServices from '~/services/searchService';
+import * as searchServices from '~/services/search';
 import useDebounce from '~/hooks';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
@@ -18,23 +18,23 @@ function Search() {
   const [showResults, setShowResults] = useState(true);
   const [loading, setLodaing] = useState(false);
   const inputRef = useRef();
-  const debounce = useDebounce(searchValue, 500);
+  const debounceValue = useDebounce(searchValue, 500);
   useEffect(() => {
-    if (!debounce) {
+    if (!debounceValue) {
       setSearchResult([]);
       return;
     }
 
     const fetchApi = async () => {
       setLodaing(true);
-      const result = await searchServices.search(debounce);
+      const result = await searchServices.search(debounceValue);
       if (result) {
         setSearchResult(result);
       }
       setLodaing(false);
     };
     fetchApi();
-  }, [debounce]);
+  }, [debounceValue]);
 
   const handleClear = () => {
     setSearchValue('');
@@ -52,6 +52,13 @@ function Search() {
     }
   };
 
+  const handleSetShowResult = (e) => {
+    setShowResults(true);
+  }
+
+  const handleDisableEvent = (e) => {
+    e.preventDefault();
+  }
   return (
     <div>
       <HeadlessTippy
@@ -76,9 +83,7 @@ function Search() {
             spellCheck={false}
             placeholder="Search accounts and vidieos"
             onChange={handleChange}
-            onFocus={(e) => {
-              setShowResults(true);
-            }}
+            onFocus={handleSetShowResult}
             value={searchValue}
           ></input>
           {!!searchValue && !loading && (
@@ -88,9 +93,7 @@ function Search() {
           )}
           {!!searchValue && loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner}></FontAwesomeIcon>}
           <button
-            onMouseDown={(e) => {
-              e.preventDefault();
-            }}
+            onMouseDown={handleDisableEvent}
             className={cx('search-btn')}
           >
             <FontAwesomeIcon icon={faMagnifyingGlass} />

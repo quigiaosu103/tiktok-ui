@@ -31,6 +31,14 @@ function Menu({ children, items = [], hideOnClick=false, onChange = defaultFn })
       );
     });
   };
+
+  const handleBack = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  }
+  const handleResetHistory = ()=>{
+    setHistory(prev => prev.slice(0,1))
+  }
+  
   return (
     <Tippy
     offset={[12, 10]}
@@ -44,18 +52,14 @@ function Menu({ children, items = [], hideOnClick=false, onChange = defaultFn })
             {history.length > 1 && (
               <Header
                 title={current.title}
-                onBack={() => {
-                  setHistory((prev) => prev.slice(0, prev.length - 1));
-                }}
+                onBack={handleBack}
               />
             )}
             <div className={cx('body-popper')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
-      onHide={()=>{
-        setHistory(prev => prev.slice(0,1))
-      }}
+      onHide={handleResetHistory}
     >
       <span>{children}</span>
     </Tippy>

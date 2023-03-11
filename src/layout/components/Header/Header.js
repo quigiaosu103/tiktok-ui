@@ -88,7 +88,7 @@ const USER_MENU = [
   },
 ];
 function Header() {
-  const currentUser = 'user1';
+  const currentUser = 'ab';
 
   const handleMenuChange = (item) => {
     switch (item.type) {
