@@ -68,3 +68,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+collect found submit raise struggle cook sand sweet rural crime sausage amount
+never imitate hurry ball pave crowd coffee wisdom unusual crowd decline father
+rude cube escape citizen whisper apology pencil become deer muffin warm iron
